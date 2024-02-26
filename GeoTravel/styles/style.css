@@ -1,0 +1,685 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;500;700&family=Pacifico&display=swap');
+@keyframes header_anim {
+    from {
+      transform: translateX(-120%);
+    }
+    to {
+      transform: translateX(50);
+    }
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color:#000;
+    font-family: 'Pacifico', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    cursor: url('/img/curs.png'), auto;
+}
+
+body img {
+    transition: 1.2s;
+}
+
+body img:hover {
+    transform: scale(1.1);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: .4s;
+}
+
+nav {
+    font-family: 'Lobster', Arial, Helvetica, sans-serif;;
+}
+
+ul>li {
+    margin-top: 0.3em;
+}
+
+ul li {
+    font-family: 'Lobster', Arial, Helvetica, sans-serif;
+    color: #e60000;
+    list-style: none;
+    padding: 12px;
+    font-size: 30px;
+    text-shadow: 1px 1px 1px #e5e5e5,
+    2px 2px 0px #e5e5e5,
+    3px 3px 0px #e5e5e5,
+    3px 3px 0px #e5e5e5;
+    border:1px solid rgba(222, 43, 43, 0.167);
+    background-color: #ffffff90;
+}
+
+ul li:hover {
+    background-color: #ffffffac;
+    text-shadow: 1px 1px 1px #d10000;
+}
+
+.header-logo__img {
+    padding-top: 10px;
+    max-width: 5.5em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#header-section {
+    padding: 2em 0 2em;
+    background-image: url(../img/header9.jpg);
+    background-size: cover;
+}
+
+.header {
+    display: flex;
+    font-weight: 600;
+}
+
+h1 {
+    padding-top: 1em;
+    text-shadow: 1px 1px 4px gray;
+    font-family: 'Lobster', Arial, Helvetica, sans-serif;
+}
+
+h1.first {
+    color:red;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    text-shadow: 1px 1px 4px white;
+}
+
+h1.second {
+    color:white;
+    padding-right: 6em;
+    text-shadow: 1px 1px 4px red;
+}
+
+.nav-main__list {
+    display: flex;
+    gap: 18px;
+    margin-right: 184px;
+    padding-top: 1em;
+}
+
+/* Сайдбар */
+
+aside {
+    height: 100%;
+    width: 86px;
+    position: fixed;
+    left: -1em;
+    top: 12em;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 1;
+    font-family: 'Lobster', Arial, Helvetica, sans-serif;
+}
+
+aside ol {
+    padding-left: 16px;
+    font-size: 24px;
+    display: block;
+}
+
+ol li {
+    margin-bottom: 0.3em;
+    list-style: none;
+}
+
+/* Сайдбар 3д */
+
+*,*:before,*:after {
+	box-sizing: border-box;
+}
+
+:after {
+	content: "";
+}
+
+aside ol {
+	text-align: center;
+}
+
+aside ol li {
+	position: relative;
+    width: 70px;
+    cursor: pointer;
+	background: rgb(231, 0, 0);
+	text-transform: uppercase;
+	transition:all .4s ease-out;
+}
+
+aside ol li:after {
+	position: absolute;
+	background: white;
+	color: rgb(231, 0, 0);
+	top:0;
+	left: 70px;
+	width: 70px; height: 100%;
+    opacity:.5;
+    transform: perspective(400px) rotateY(90deg);
+	transform-origin: 0 100%;
+	transition:all .4s ease-out;
+}
+
+aside ol li:nth-child(1):after {
+	content: "МЫ";
+	line-height: 88px;
+}
+
+aside ol li:nth-child(2):after {
+	content: "Туры";
+	line-height: 88px;
+}
+
+aside ol li:nth-child(3):after {
+	content: "Бронь";
+	line-height: 85px;
+}
+
+aside ol li:hover {
+	transform: translateX(-70px);
+}
+
+aside ol li:hover:after {
+  opacity: 1;
+	transform: perspective(400px) rotateY(0deg) scale(1) ;
+}
+
+aside ol li > div {
+	display: inline-block;
+	padding: 25px 0;
+	background: transparent;
+}
+
+aside ol li div { position: relative; }
+
+.roof {
+	width: 0;
+	height: 0;
+	top:2px;
+	border-style: solid;
+	border-width: 0 21px 15px 21px;
+	border-color: transparent transparent #ffffff transparent;
+}
+
+.roof-edge {
+	position: absolute;
+	z-index: 20;
+	left: -17px;
+	top: 3px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 17px 12px 17px;
+	border-color: transparent transparent crimson transparent;
+}
+
+.roof-edge:after {
+	position: absolute;
+	left: -14.5px;
+	top: 3px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 14.5px 10px 14.5px;
+	border-color: transparent transparent white transparent;
+}
+
+.front {
+	position: relative;
+	top: 3px;
+	width: 28.5px;
+	height: 20px;
+	margin: 0 auto;
+	background: white;
+}
+
+.front:after {
+	position: absolute;
+	background: crimson;
+	width: 11px;
+	height: 13px;
+	bottom: 0;
+	left:9px;
+}
+
+.head {
+	width: 32px;
+	height: 35px;
+	background: white;
+	border-radius:8px;
+}
+
+.head:after {
+	width: 4px;
+	height: 10px;
+	background: white;
+	position: absolute;
+	border-radius:4px 0 0 4px;
+	top:21px;
+	left: 14px;
+	transform:rotate(270deg);
+}
+
+.eyes {
+	width: 8px;
+	height: 5px;
+	border-radius: 50%;
+	position: absolute;
+	top: 10px;
+	left: 5px;
+	background: crimson;
+}
+
+.eyes:after {
+	width: 8px;
+	height: 5px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 14px;
+	background: crimson;
+}
+
+.beard {
+	width: 32px;
+	height: 17px;
+	background: crimson;
+	border:2px solid white;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-radius:0 0 8px 8px;
+}
+
+.beard:after {
+	position: absolute;
+	top:-2px;
+	left: 11px;
+	background: white;
+	width:6px;
+	height: 4px;
+	border-left:1px solid crimson;
+	border-right:1px solid crimson;
+}
+
+.paper {
+	position: relative;
+	height:32px;
+	width: 29px;
+	background: white;
+	border:2px solid white;
+}
+
+.paper:after {
+	position: absolute;
+	top:1px;
+	left: 0;
+	width: 25px;
+	height: 29px;
+	background: white;
+	border-top:4px solid crimson;
+}
+
+.lines {
+	position: absolute;
+	top: 36px;
+	left: 5px;
+	width: 11px;
+	box-shadow: 0 0 0 1px crimson;
+}
+
+.lines:after {
+	position: absolute;
+	top: 4px;
+	left: 3px;
+	width: 14px;
+	box-shadow: 0 0 0 1px crimson;
+}
+
+.lines:nth-child(2) {
+	position: absolute;
+	top: 44px;
+	left: 8px;
+	width: 11px;
+}
+
+.lines:nth-child(2):after {
+	position: absolute;
+	top: 4px;
+	left: -3px;
+	width: 11px;
+}
+
+.lines:nth-child(3) {
+	position: absolute;
+	top: 52px;
+	left: 8px;
+	width: 14px;
+}
+
+.lines:nth-child(3):after {
+	display: none;
+}
+
+
+h2 {
+    position: relative;
+    font-family: 'Lobster', Arial, Helvetica, sans-serif;
+    font-size: 3.5em;
+    padding-top: 0.5em;
+}
+
+h3 {
+    font-family: 'Lobster', Arial, Helvetica, sans-serif;;
+}
+
+.title {
+    padding-top: 0.9em;
+    padding-left: 7em;
+    transform: translateX(50);
+    animation-name: header_anim;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-transform: uppercase;
+    color: red;
+    align-self: center;
+}
+
+/* О Нас */
+#about-us-section, #tour, #tour-info {
+    padding-bottom: 15px;
+}
+
+.about-us-section__title, .tour-section__title, .tour-info-section__title {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.about-us-wrap, .tour-wrap, .tour-info-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.about-us__img, .tour__img, .tour-info__img  {
+    margin-bottom: 24px;
+    width: 400px;
+}
+
+.about-us__title, .tour__title, .tour-info__title {
+    margin-bottom: 16px;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+}
+
+.about-us__text, .tour__text, .tour-info__text {
+    color: rgba(0, 0, 0, 0.8);
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+p i {
+    font-size: 1.4em;
+}
+
+.gorec {
+    position: absolute;
+    width: 300px;
+    margin-top: 442px;
+    margin-left: -300px;
+    z-index: -1;
+}
+
+.gastro {
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image:url('../img/gastro.jpg');
+    height: 200px;
+
+}
+
+.vine {
+    position: absolute;
+    width: 310px;
+    margin-left: 1190px;
+    margin-top: 444px;
+}
+
+.ornament {
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image:url('../img/Otbivka.jpg');
+    height: 200px;
+}
+
+.orn {
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image:url('../img/piro.jpg');
+    height: 200px;
+}
+
+.fon {
+    position: absolute;
+    width: 320px;
+    margin-left: 1190px;
+    margin-top: 2220px;
+}
+
+.georgia {
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image:url('../img/georgia.jpg');
+    height: 200px;
+    width: 1980px;
+}
+
+.ornament-order {
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image:url('../img/ogo.jpg');
+    height: 200px;
+    width: 1980px;
+}
+
+.gogo {
+    position: absolute;
+    width: 500px;
+    margin-left: 190px;
+    margin-top: -200px;
+    z-index: -1;
+}
+
+.gvrito {
+    position: absolute;
+    width: 200px;
+    margin-left: 1360px;
+    margin-top: -500px;
+}
+
+.geo-1 {
+    position: absolute;
+    width: 480px;
+    margin-left: 290px;
+    margin-top: -560px;
+    transition: 1.2s
+}
+
+.geo-2 {
+    position: absolute;
+    width: 470px;
+    margin-left: -285px;
+    margin-top: -300px;
+    transition: 1.2s
+}
+
+.geo-3 {
+    position: absolute;
+    width: 480px;
+    margin-left: -190px;
+    margin-top: -683px;
+    transition: 1.2s
+}
+
+.geo-1:hover, .geo-2:hover, .geo-3:hover {
+    transform: scale(1.2);
+}
+
+/* Раздел Заказ */
+
+.order-form {
+    border-radius: 16px;
+    border: 1px solid #f20d0dcd;
+    background: rgba(246, 12, 12, 0.76);
+    margin-top: 120px;
+    max-width: 426px;
+    box-sizing: border-box;
+    padding: 60px 23px;
+    margin-left: 809px;
+    transition: 0.9s;
+}
+
+.order-form:hover {
+    border-color: #ff0000;
+    background-color: rgba(241, 23, 23, 0.899);
+}
+
+.order-form-text {
+    text-align: center;
+    font-size: 24px;
+    line-height: 29px;
+    color: #fff;
+}
+
+.order-form-inputs {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.order-form-input:hover {
+    border: 1px solid rgba(255, 255, 255, 0.93);
+}
+
+.order-form-input {
+    background: linear-gradient(95.61deg, #e90808e6 0%, #e42828c7 100%);
+    width: 344px;
+    height: 62px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input::placeholder {
+     color: rgb(255, 255, 255);
+    }
+
+.order-form-input input {
+    padding: 20px 10px;
+    background: #8a350463;
+    border-radius: 8px;
+    width: 342px;
+    height: 60px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid transparent;
+    color: white;
+}
+
+.order-form-inputs .button {
+    width: 344px;
+    height: 62px;
+    transition: 0.7s;
+}
+
+.order-form-inputs .button:hover {
+    transform: scale(1.1);
+}
+
+button {
+    background-color:#d20d0de8;
+    border: 1px solid rgba(241, 7, 7, 0.676);
+    font-family: 'Lobster', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: #fff;
+}
+
+button:hover {
+    border:1px solid red;
+    color: #df0f0ffa;
+    background-color:#fff;
+    text-decoration: underline;
+}
+
+
+.footer {
+    padding: 20px 0;
+    background-image:url('../img/Autumn.jpg');
+}
+
+.footer .container {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    font-family: serif;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+.footer img {
+    height: 100px;
+}
+
+.footer h1 {
+    margin-bottom: 50px;
+}
+
+.footer p {
+    padding-left: 50px;
+}
+
+.footer a {
+    padding-left: 50px;
+}
+
+.foot {
+    background-position: center;
+    background-attachment: scroll;
+    background-size: cover;
+    background-image:url('../img/foot.jpg');
+    height: 100px;
+    margin-top: 190px;
+}
+
+.contacts {
+    color:white;
+    font-size: 22px;
+    justify-content: space-between;
+    text-shadow: #000;
+    text-decoration: underline solid white;
+}
+
+.rights {
+    color:white;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
